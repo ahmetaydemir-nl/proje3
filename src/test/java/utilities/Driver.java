@@ -11,6 +11,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.*;
+import pages.Us17_18_19_Page;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -540,5 +542,14 @@ public class Driver {
         password.sendKeys(ConfigurationReader.getProperty("employee_password"));
         wait(1);
         signin.click();
+    }
+    public static void adminSingIn (){
+        Us17_18_19_Page page =new Us17_18_19_Page();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        Driver.waitAndClick(page.profilLogosu,1);
+        Driver.waitAndClick(page.signInLinki,1);
+        Driver.waitAndSendText(page.usernameKutusu, ConfigurationReader.getProperty("admin_username"),1);
+        Driver.waitAndSendText(page.paswordKutusu,ConfigurationReader.getProperty("admin_password"),1);
+        Driver.waitAndClick(page.signInButonu,1);
     }
 }
