@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Us001Page {
+public class Us01_02Page {
 
-    public Us001Page(){
+    public Us01_02Page(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(xpath ="//a[@class='d-flex align-items-center dropdown-toggle nav-link']" )

@@ -2,12 +2,12 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.Us001Page;
+import pages.Us01_02Page;
 import utilities.Driver;
 
-public class Us001StepDef {
+public class Us01_02StepDef {
 
-    Us001Page us001Page = new Us001Page();
+    Us01_02Page us001Page = new Us01_02Page();
 
     @Given("kullanici gmibank sayfasina {string} gider")
     public void kullanici_gmibank_sayfasina_gider(String url) {
