@@ -524,6 +524,4 @@ public class Driver {
             Assert.fail("Element not found: " + element);
         }
     }
-
-
 }

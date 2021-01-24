@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         tags = "@smoketest",
         dryRun = false
 )
-public class Us001Runner {
+public class Us01_02Runner {
 }
