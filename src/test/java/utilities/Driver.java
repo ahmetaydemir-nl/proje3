@@ -23,8 +23,10 @@ public class Driver {
 
     private Driver() {
     }
+
     //   static WebElement webelement;
     static WebDriver driver;
+
     public static WebDriver getDriver() {
         if (driver == null) {
             switch (ConfigurationReader.getProperty("browser")) {
@@ -370,6 +372,7 @@ public class Driver {
             }
         });
     }
+
     public static void waitAndClick(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -380,6 +383,7 @@ public class Driver {
             }
         }
     }
+
     public static void waitAndSendText(WebElement element, String text, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -390,6 +394,7 @@ public class Driver {
             }
         }
     }
+
     public static String waitAndGetText(WebElement element, int timeout) {
         String text = "";
         for (int i = 0; i < timeout; i++) {
@@ -402,6 +407,7 @@ public class Driver {
         }
         return null;
     }
+
     public static String waitForGetPageTitle(String title) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -411,6 +417,7 @@ public class Driver {
         }
         return driver.getTitle();
     }
+
     /*
     public static  void iAmOnHomePage() {
         GmiSignInPage gmiSignInPage = new GmiSignInPage();
@@ -477,7 +484,8 @@ public class Driver {
         Select select = new Select(element);
         select.selectByIndex(index);
     }
-    public static void selectDropdownByVisibleText(WebDriver driver,WebElement element,String value) {
+
+    public static void selectDropdownByVisibleText(WebDriver driver, WebElement element, String value) {
         Select select = new Select(element);
         select.selectByVisibleText(value);
     }
@@ -502,6 +510,7 @@ public class Driver {
         }
         return hex;
     }
+
     public static void verifyElementNotDisplayed(WebElement element) {
         try {
             assertFalse("Element should not be visible: " + element, element.isDisplayed());
@@ -512,16 +521,24 @@ public class Driver {
 
     public static void isClick(WebElement element) {
         try {
-            assertTrue("Element not visible: " + element,element.isEnabled());
+            assertTrue("Element not visible: " + element, element.isEnabled());
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + element);
         }
     }
+
     public static void isVisible(WebElement element) {
         try {
-            assertTrue("Element not visible: " + element,element.isDisplayed());
+            assertTrue("Element not visible: " + element, element.isDisplayed());
         } catch (NoSuchElementException e) {
             Assert.fail("Element not found: " + element);
         }
+    }
+
+    public static void employeeLogin(WebElement username, WebElement password, WebElement signin) {
+        username.sendKeys(ConfigurationReader.getProperty("employee_username"));
+        password.sendKeys(ConfigurationReader.getProperty("employee_password"));
+        wait(1);
+        signin.click();
     }
 }

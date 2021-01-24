@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@login",
+        tags = "@SmokeTest",
         dryRun = false
 )
-public class Us01_02Runner {
+public class Us17_18_19_Runner {
 }
