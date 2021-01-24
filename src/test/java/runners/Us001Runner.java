@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
-        glue = "proje/stepdefinitions",
+        glue = "stepdefinitions",
         tags = "@login",
-        dryRun = true
+        dryRun = false
 )
 public class Us001Runner {
 }
