@@ -524,6 +524,11 @@ public class Driver {
             Assert.fail("Element not found: " + element);
         }
     }
-
+    public static void employeeLogin(WebElement username,WebElement password,WebElement signin)  {
+        username.sendKeys(ConfigurationReader.getProperty("employee_username"));
+        password.sendKeys(ConfigurationReader.getProperty("employee_password"));
+        wait(1);
+        signin.click();
+    }
 
 }
